@@ -1,0 +1,11 @@
+services:
+    nginx:
+        image: nginx:alpine
+        restart: always
+        ports:
+            - "80:80"
+        volumes:
+            - ./nginx/conf.d/:/etc/nginx/conf.d/
+            - ./nginx/www:/var/www
+            - ./nginx/logs/nginx:/var/log/nginx
+    
